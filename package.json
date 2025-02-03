@@ -1,5 +1,5 @@
 {
-  "name": "@objectivedefi/oracle-sdk",
+  "name": "@objectivelabs/oracle-sdk",
   "version": "0.1.0",
   "description": "JavaScript utilities for Euler price oracles",
   "main": "dist/index.js",
