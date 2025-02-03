@@ -71,7 +71,6 @@ export async function runChecks({
       }),
     ),
   );
-
   const assetAddresses = Array.from(
     new Set(adapters.flatMap((adapter) => extractAssetAddresses(adapter))),
   );
@@ -81,11 +80,15 @@ export async function runChecks({
     addresses: assetAddresses,
   });
 
-  const [chainlinkMetadata, redstoneMetadata, pythMetadata] = await Promise.all([
+  const [chainlinkResult, redstoneResult, pythResult] = await Promise.allSettled([
     fetchChainlinkMetadata(chainId),
     fetchRedStonePriceFeeds(chainId),
     fetchPythMetadata(),
   ]);
+
+  const chainlinkMetadata = chainlinkResult.status === "fulfilled" ? chainlinkResult.value : [];
+  const redstoneMetadata = redstoneResult.status === "fulfilled" ? redstoneResult.value : [];
+  const pythMetadata = pythResult.status === "fulfilled" ? pythResult.value : [];
 
   const adapterToResults: AdapterToResults = {};
 
