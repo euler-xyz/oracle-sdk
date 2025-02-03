@@ -1,4 +1,3 @@
-import { PythOracle } from "../../euler/types";
 import { CheckResultWithId } from "./types";
 import {
   CHECKS,
@@ -7,6 +6,7 @@ import {
   PYTH_STALENESS_RANGE_MAXIMUM,
   PYTH_STALENESS_RANGE_MINIMUM,
 } from "./utils";
+import { PythOracle } from "../../euler/types";
 
 type Params = {
   adapter: PythOracle;

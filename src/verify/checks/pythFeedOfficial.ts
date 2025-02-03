@@ -1,7 +1,7 @@
-import { PythOracle } from "../../euler/types";
-import { PythMetadata, PythPriceFeed } from "../../pyth/types";
 import { CheckResultWithId } from "./types";
 import { CHECKS, failCheck, passCheck } from "./utils";
+import { PythOracle } from "../../euler/types";
+import { PythMetadata, PythPriceFeed } from "../../pyth/types";
 
 type Params = {
   adapter: PythOracle;

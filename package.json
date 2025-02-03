@@ -1,5 +1,5 @@
 {
-  "name": "@euler/oracle-sdk",
+  "name": "@objectivedefi/oracle-sdk",
   "version": "0.1.0",
   "description": "JavaScript utilities for Euler price oracles",
   "main": "dist/index.js",
@@ -16,8 +16,7 @@
     "lint:fix": "eslint src --ext .ts --fix",
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\"",
-    "prepublishOnly": "npm run build",
-    "test": "jest"
+    "prepublishOnly": "npm run build"
   },
   "publishConfig": {
     "access": "public"
@@ -48,7 +47,6 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.3",
     "prettier": "^3.4.2",
-    "prettier-plugin-organize-imports": "^4.1.0",
     "rimraf": "^6.0.1",
     "tsup": "^8.3.6",
     "typescript": "^5.7.3"

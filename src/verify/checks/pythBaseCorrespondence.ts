@@ -1,7 +1,7 @@
-import { Asset } from "../../euler";
-import { PythPriceFeed } from "../../pyth/types";
 import { CheckResultWithId } from "./types";
 import { CHECKS, failCheck, passCheck } from "./utils";
+import { Asset } from "../../euler/types";
+import { PythPriceFeed } from "../../pyth/types";
 
 type Params = {
   base?: Asset;

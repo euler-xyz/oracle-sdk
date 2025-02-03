@@ -1,6 +1,6 @@
-import { PythOracle } from "../../euler/types";
 import { CheckResultWithId } from "./types";
 import { CHAIN_ID_TO_OFFICIAL_PYTH_PROXY, CHECKS, failCheck, passCheck } from "./utils";
+import { PythOracle } from "../../euler/types";
 
 type Params = {
   adapter: PythOracle;

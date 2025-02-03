@@ -22,6 +22,13 @@ module.exports = {
           "object",
           "type"
         ],
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ],
+        "distinctGroup": false,
         "newlines-between": "always",
         "alphabetize": {
           "order": "asc",

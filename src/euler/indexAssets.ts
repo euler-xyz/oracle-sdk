@@ -1,5 +1,6 @@
 import { Address, erc20Abi, PublicClient } from "viem";
 
+import { Asset } from "./types";
 import {
   DESIGNATOR_BTC,
   DESIGNATOR_EUR,
@@ -7,7 +8,6 @@ import {
   DESIGNATOR_USD,
   SPECIAL_MKR,
 } from "../verify/checks/utils/constants";
-import { Asset } from "./types";
 
 type Params = {
   publicClient: PublicClient;

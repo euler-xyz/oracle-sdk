@@ -1,11 +1,5 @@
 import { Address, PublicClient } from "viem";
 
-import { fetchChainlinkMetadata } from "../chainlink/fetchChainlinkMetadata";
-import { indexAdapters } from "../euler/indexAdapters";
-import { indexAssets } from "../euler/indexAssets";
-import { Adapter } from "../euler/types";
-import { fetchPythMetadata } from "../pyth/fetchPythMetadata";
-import { fetchRedStonePriceFeeds } from "../redstone/fetchRedStonePriceFeeds";
 import {
   assetConsistent,
   assetsDistinct,
@@ -20,6 +14,12 @@ import {
   pythQuoteCorrespondence,
   pythStalenessRange,
 } from "./checks";
+import { fetchChainlinkMetadata } from "../chainlink/fetchChainlinkMetadata";
+import { indexAdapters } from "../euler/indexAdapters";
+import { indexAssets } from "../euler/indexAssets";
+import { Adapter } from "../euler/types";
+import { fetchPythMetadata } from "../pyth/fetchPythMetadata";
+import { fetchRedStonePriceFeeds } from "../redstone/fetchRedStonePriceFeeds";
 
 type Params = {
   adapterAddresses: Address[];

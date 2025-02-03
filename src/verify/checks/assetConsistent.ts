@@ -1,8 +1,8 @@
 import { Address } from "viem";
 
-import { Asset } from "../../euler/types";
 import { CheckResultWithId } from "./types";
 import { CHECKS, failCheck, passCheck, RECOGNIZED_DESIGNATOR_ASSETS } from "./utils";
+import { Asset } from "../../euler/types";
 
 type Params = {
   asset: Asset | undefined;

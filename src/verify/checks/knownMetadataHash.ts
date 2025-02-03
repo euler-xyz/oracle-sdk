@@ -1,9 +1,9 @@
 import { decode } from "cbor-x";
 import { Hex } from "viem";
 
-import { Adapter } from "../../euler/types";
 import { CheckResultWithId } from "./types";
 import { ADAPTER_METADATA_HASHES, CHECKS, failCheck, passCheck } from "./utils";
+import { Adapter } from "../../euler/types";
 
 export function knownMetadataHash(adapter: Adapter, code: Hex | undefined): CheckResultWithId {
   if (!code || code === "0x") {

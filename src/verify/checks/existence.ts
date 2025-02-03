@@ -1,8 +1,8 @@
 import { Address } from "viem";
 
-import { Adapter } from "../../euler/types";
 import { CheckResultWithId } from "./types";
 import { CHECKS, failCheck, passCheck } from "./utils";
+import { Adapter } from "../../euler/types";
 
 type Params = {
   chainId: number;

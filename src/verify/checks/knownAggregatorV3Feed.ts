@@ -1,8 +1,8 @@
+import { CheckResultWithId } from "./types";
+import { CHECKS, failCheck, passCheck, RECOGNIZED_OTHER_AGGREGATOR_V3_FEEDS } from "./utils";
 import { ChainlinkMetadata } from "../../chainlink/types";
 import { ChainlinkInfrequentOracle, ChainlinkOracle } from "../../euler/types";
 import { RedStonePriceFeed } from "../../redstone/types";
-import { CheckResultWithId } from "./types";
-import { CHECKS, failCheck, passCheck, RECOGNIZED_OTHER_AGGREGATOR_V3_FEEDS } from "./utils";
 
 type Params = {
   adapter: ChainlinkOracle | ChainlinkInfrequentOracle;
