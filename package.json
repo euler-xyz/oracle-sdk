@@ -1,5 +1,5 @@
 {
-  "name": "@euler/oracle-kit",
+  "name": "@objectivelabs/oracle-sdk",
   "version": "0.1.1",
   "description": "JavaScript utilities for Euler price oracles",
   "main": "dist/index.js",
@@ -26,11 +26,11 @@
     "defi",
     "price-feed"
   ],
-  "author": "Euler Labs",
+  "author": "Objective Labs",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/euler-xyz/oracle-kit.git"
+    "url": "git+https://github.com/objectivedefi/oracle-sdk.git"
   },
   "devDependencies": {
     "@swc-node/register": "^1.10.9",
