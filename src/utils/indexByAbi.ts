@@ -2,17 +2,19 @@ import { AbiFunction, Address, PublicClient } from "viem";
 
 import { getChainId } from "../utils/getChainId";
 
-type Params = {
+type Params<T> = {
   publicClient: PublicClient;
   addresses: Address[];
   abiFunctions: readonly AbiFunction[];
+  transformers?: Partial<Record<string, (value: unknown) => Partial<T>>>;
 };
 
 export async function indexByAbi<T>({
   publicClient,
   addresses,
   abiFunctions,
-}: Params): Promise<T[]> {
+  transformers = {},
+}: Params<T>): Promise<T[]> {
   const chainId = getChainId(publicClient);
 
   const contractCalls = addresses.flatMap((address) =>
@@ -32,8 +34,15 @@ export async function indexByAbi<T>({
   return addresses.map((address, i) => ({
     address,
     chainId,
-    ...abiFunctions.map(({ name }, j) => ({
-      [name]: callValues[i * abiFunctions.length + j],
-    })),
+    ...Object.fromEntries(
+      abiFunctions.flatMap(({ name }, j) => {
+        const value = callValues[i * abiFunctions.length + j];
+        const transformer = transformers[name];
+        if (transformer && value !== undefined) {
+          return Object.entries(transformer(value));
+        }
+        return [[name, value]];
+      }),
+    ),
   })) as T[];
 }
