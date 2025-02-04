@@ -1,4 +1,17 @@
-export type ChainlinkPriceFeed = {
+import { Address } from "viem";
+
+export type ChainlinkFeed = {
+  chainId: number;
+  address: Address;
+  accessController: Address;
+  aggregator: Address;
+  decimals: number;
+  description: string;
+  owner: Address;
+  version: bigint;
+};
+
+export type ChainlinkFeedMetadata = {
   compareOffchain: string;
   contractAddress: string;
   contractType: string;
@@ -42,4 +55,4 @@ export type ChainlinkPriceFeed = {
   };
 };
 
-export type ChainlinkMetadata = ChainlinkPriceFeed[];
+export type ChainlinkMetadata = ChainlinkFeedMetadata[];

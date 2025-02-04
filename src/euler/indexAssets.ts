@@ -1,6 +1,7 @@
 import { Address, erc20Abi, PublicClient } from "viem";
 
 import { Asset } from "./types";
+import { getChainId } from "../utils/getChainId";
 
 type Params = {
   publicClient: PublicClient;
@@ -13,10 +14,7 @@ export async function indexAssets({
   addresses,
   fallbacks,
 }: Params): Promise<Asset[]> {
-  const chainId = publicClient.chain?.id;
-  if (!chainId) {
-    throw new Error("Client chain id is undefined");
-  }
+  const chainId = getChainId(publicClient);
   const results = await publicClient.multicall({
     contracts: addresses.flatMap((address) =>
       (["name", "symbol", "decimals"] as const).map((functionName) => ({

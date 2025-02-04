@@ -1,6 +1,7 @@
 import { Address, getAddress, PublicClient } from "viem";
 
 import { PendleMetadata } from "./types";
+import { getChainId } from "../utils/getChainId";
 
 type PendleApiResponse = {
   chainIdList: number[];
@@ -14,10 +15,7 @@ type Params = {
 };
 
 export async function fetchPendleMetadata({ publicClient }: Params): Promise<PendleMetadata> {
-  const chainId = publicClient.chain?.id;
-  if (!chainId) {
-    throw new Error("Client chain id is undefined");
-  }
+  const chainId = getChainId(publicClient);
 
   const res = await fetch(
     `https://api-v2.pendle.finance/bff/v3/markets/all?isActive=true&chainId=${chainId}`,

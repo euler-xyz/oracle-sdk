@@ -1,6 +1,7 @@
 import { Address, parseAbi, PublicClient } from "viem";
 
 import { Adapter } from "./types";
+import { getChainId } from "../utils/getChainId";
 
 const abi = parseAbi([
   "function name() view returns (string)",
@@ -58,10 +59,7 @@ export async function indexAdapters({
   adapterAddresses,
   publicClient,
 }: Params): Promise<(Adapter | null)[]> {
-  const chainId = publicClient.chain?.id;
-  if (!chainId) {
-    throw new Error("Client chain id is undefined");
-  }
+  const chainId = getChainId(publicClient);
 
   const nameCallsResults = await publicClient.multicall({
     contracts: adapterAddresses.map((address) => ({
