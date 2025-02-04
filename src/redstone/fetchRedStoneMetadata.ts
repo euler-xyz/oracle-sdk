@@ -2,12 +2,12 @@ import { isAddress } from "viem";
 
 import { chainIdToRedStoneRelayerManifestSlugs, REDSTONE_MANIFESTS_BASE_URL } from "./constants";
 import {
-  RedStonePriceFeed,
+  RedStoneMetadata,
   RedStoneRelayerManifest,
   RedStoneRelayerMultiFeedManifest,
 } from "./types";
 
-export async function fetchRedStonePriceFeeds(chainId: number): Promise<RedStonePriceFeed[]> {
+export async function fetchRedStoneMetadata(chainId: number): Promise<RedStoneMetadata> {
   if (!chainIdToRedStoneRelayerManifestSlugs[chainId]) {
     throw new Error(`No RedStone metadata slugs found for chainId ${chainId}`);
   }
@@ -32,7 +32,7 @@ export async function fetchRedStonePriceFeeds(chainId: number): Promise<RedStone
     standaloneUrls.map((url) => fetch(url).then((response) => response.json())),
   );
 
-  const priceFeeds: RedStonePriceFeed[] = [];
+  const priceFeeds: RedStoneMetadata = [];
 
   // Process multi feed metadata
   if (multiResponse) {

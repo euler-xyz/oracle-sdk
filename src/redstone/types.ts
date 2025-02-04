@@ -1,4 +1,4 @@
-import { Address } from "viem";
+import { Address, Hex } from "viem";
 
 type Chain = {
   name: string;
@@ -34,9 +34,20 @@ export type RedStoneRelayerMultiFeedManifest = RedStoneRelayerBase & {
   };
 };
 
-export type RedStonePriceFeed = {
+export type RedStoneMetadata = {
   symbol: string;
   priceFeedAddress: Address;
   deviationPercentage?: number;
   heartbeat?: number;
+}[];
+
+export type RedStoneFeed = {
+  chainId: number;
+  address: Address;
+  aggregator: Address;
+  decimals: number;
+  description: string;
+  version: bigint;
+  dataFeedId: Hex;
+  priceFeedAdapter: Address;
 };

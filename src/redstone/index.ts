@@ -1,3 +1,4 @@
 export * from "./constants";
-export * from "./fetchRedStonePriceFeeds";
+export * from "./fetchRedStoneMetadata";
+export * from "./indexRedStoneFeeds";
 export * from "./types";
