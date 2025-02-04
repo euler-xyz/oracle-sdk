@@ -44,7 +44,6 @@
     "eslint": "^8.57.0"
   },
   "dependencies": {
-    "cbor-x": "^1.6.0",
     "viem": "^2.22.21"
   }
 }
