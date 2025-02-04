@@ -1,4 +1,4 @@
-import { Address, parseAbi, PublicClient } from "viem";
+import { Address, Hex, parseAbi, PublicClient } from "viem";
 
 import { RedStoneFeed } from "./types";
 import { indexByAbi } from "../utils/indexByAbi";
@@ -9,8 +9,8 @@ const abiFunctions = parseAbi([
   "function decimals() view returns (uint8)",
   "function description() view returns (string)",
   "function version() view returns (uint256)",
-  "function dataFeedId() view returns (bytes32)",
-  "function priceFeedAdapter() view returns (address)",
+  "function getDataFeedId() view returns (bytes32)",
+  "function getPriceFeedAdapter() view returns (address)",
 ]);
 
 type Params = {
@@ -22,5 +22,17 @@ export async function indexRedStoneFeeds({
   publicClient,
   addresses,
 }: Params): Promise<RedStoneFeed[]> {
-  return indexByAbi({ publicClient, addresses, abiFunctions });
+  return indexByAbi<RedStoneFeed>({
+    publicClient,
+    addresses,
+    abiFunctions,
+    transformers: {
+      getDataFeedId: (value) => ({
+        dataFeedId: value as Hex,
+      }),
+      getPriceFeedAdapter: (value) => ({
+        priceFeedAdapter: value as Address,
+      }),
+    },
+  });
 }
