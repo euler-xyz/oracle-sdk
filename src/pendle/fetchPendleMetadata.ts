@@ -1,7 +1,6 @@
-import { Address, getAddress, PublicClient } from "viem";
+import { Address, getAddress } from "viem";
 
 import { PendleMetadata } from "./types";
-import { getChainId } from "../utils/getChainId";
 
 type PendleApiResponse = {
   chainIdList: number[];
