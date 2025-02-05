@@ -16,5 +16,8 @@ export type PendleMetadata = {
   chainId: number;
   pt: Address;
   market: Address;
-  asset: Address;
+  accountingAsset: Address;
+  underlyingAsset: Address;
+  expiry: number;
+  symbol: string;
 }[];
