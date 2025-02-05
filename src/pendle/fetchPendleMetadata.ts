@@ -13,17 +13,11 @@ type PendleApiResponse = {
   symbolList: string[];
 };
 
-type Params = {
-  publicClient: PublicClient;
-};
-
 function splitAddress(address: string): Address {
   return address.split("-")[1] as Address;
 }
 
-export async function fetchPendleMetadata({ publicClient }: Params): Promise<PendleMetadata> {
-  const chainId = getChainId(publicClient);
-
+export async function fetchPendleMetadata(chainId: number): Promise<PendleMetadata> {
   const res = await fetch(`https://api-v2.pendle.finance/bff/v3/markets/all?chainId=${chainId}`);
 
   const data = (await res.json()) as PendleApiResponse;
