@@ -1,6 +1,6 @@
-import { chainIdToRddSlug, RDD_URL } from "./chainIdToRddSlug";
-import { fetchChainlinkMetadataByRddUrl } from "./fetchChainlinkMetadataByRddUrl";
-import { ChainlinkMetadata } from "./types";
+import { chainIdToRddSlug, RDD_URL } from './chainIdToRddSlug';
+import { fetchChainlinkMetadataByRddUrl } from './fetchChainlinkMetadataByRddUrl';
+import { ChainlinkMetadata } from './types';
 
 export async function fetchChainlinkMetadata(chainId: number): Promise<ChainlinkMetadata> {
   const rddSlug = chainIdToRddSlug[chainId];

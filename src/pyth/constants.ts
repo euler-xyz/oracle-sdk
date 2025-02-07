@@ -1,1 +1,1 @@
-export const DEFAULT_HERMES_URL = "https://hermes.pyth.network";
+export const DEFAULT_HERMES_URL = 'https://hermes.pyth.network';

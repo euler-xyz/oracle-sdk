@@ -1,6 +1,6 @@
-import { Address, getAddress } from "viem";
+import { Address, getAddress } from 'viem';
 
-import { PendleMetadata } from "./types";
+import { PendleMetadata } from './types';
 
 type PendleApiResponse = {
   chainIdList: number[];
@@ -13,7 +13,7 @@ type PendleApiResponse = {
 };
 
 function splitAddress(address: string): Address {
-  return address.split("-")[1] as Address;
+  return address.split('-')[1] as Address;
 }
 
 export async function fetchPendleMetadata(chainId: number): Promise<PendleMetadata> {
@@ -22,7 +22,7 @@ export async function fetchPendleMetadata(chainId: number): Promise<PendleMetada
   const data = (await res.json()) as PendleApiResponse;
 
   if (!data) {
-    throw new Error("No data returned from Pendle API");
+    throw new Error('No data returned from Pendle API');
   }
 
   const ptAddresses = data.ptList.map((address) => splitAddress(address));

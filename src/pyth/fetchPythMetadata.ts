@@ -1,5 +1,5 @@
-import { DEFAULT_HERMES_URL } from "./constants";
-import { PythMetadata } from "./types";
+import { DEFAULT_HERMES_URL } from './constants';
+import { PythMetadata } from './types';
 
 export async function fetchPythMetadata(hermesUrl = DEFAULT_HERMES_URL): Promise<PythMetadata> {
   const url = `${hermesUrl}/v2/price_feeds`;

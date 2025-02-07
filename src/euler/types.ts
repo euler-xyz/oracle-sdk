@@ -1,9 +1,9 @@
-import { Address, Hex } from "viem";
+import { Address, Hex } from 'viem';
 
 export type ChainlinkOracle = {
   address: Address;
   chainId: number;
-  name: "ChainlinkOracle";
+  name: 'ChainlinkOracle';
   base: Address;
   quote: Address;
   feed: Address;
@@ -13,7 +13,7 @@ export type ChainlinkOracle = {
 export type ChainlinkInfrequentOracle = {
   address: Address;
   chainId: number;
-  name: "ChainlinkInfrequentOracle";
+  name: 'ChainlinkInfrequentOracle';
   base: Address;
   quote: Address;
   feed: Address;
@@ -23,7 +23,7 @@ export type ChainlinkInfrequentOracle = {
 export type ChronicleOracle = {
   address: Address;
   chainId: number;
-  name: "ChronicleOracle";
+  name: 'ChronicleOracle';
   base: Address;
   quote: Address;
   feed: Address;
@@ -33,7 +33,7 @@ export type ChronicleOracle = {
 export type LidoOracle = {
   address: Address;
   chainId: number;
-  name: "LidoOracle";
+  name: 'LidoOracle';
   WSTETH: Address;
   STETH: Address;
 };
@@ -41,7 +41,7 @@ export type LidoOracle = {
 export type LidoFundamentalOracle = {
   address: Address;
   chainId: number;
-  name: "LidoFundamentalOracle";
+  name: 'LidoFundamentalOracle';
   WSTETH: Address;
   STETH: Address;
   WETH: Address;
@@ -50,7 +50,7 @@ export type LidoFundamentalOracle = {
 export type PythOracle = {
   address: Address;
   chainId: number;
-  name: "PythOracle";
+  name: 'PythOracle';
   base: Address;
   quote: Address;
   pyth: Address;
@@ -62,7 +62,7 @@ export type PythOracle = {
 export type RedstoneCoreOracle = {
   address: Address;
   chainId: number;
-  name: "RedstoneCoreOracle";
+  name: 'RedstoneCoreOracle';
   base: Address;
   quote: Address;
   feedId: Hex;
@@ -73,7 +73,7 @@ export type RedstoneCoreOracle = {
 export type CrossAdapter = {
   address: Address;
   chainId: number;
-  name: "CrossAdapter";
+  name: 'CrossAdapter';
   base: Address;
   quote: Address;
   cross: Address;
@@ -84,7 +84,7 @@ export type CrossAdapter = {
 export type FixedRateOracle = {
   address: Address;
   chainId: number;
-  name: "FixedRateOracle";
+  name: 'FixedRateOracle';
   base: Address;
   quote: Address;
   rate: bigint;
@@ -93,7 +93,7 @@ export type FixedRateOracle = {
 export type RateProviderOracle = {
   address: Address;
   chainId: number;
-  name: "RateProviderOracle";
+  name: 'RateProviderOracle';
   base: Address;
   quote: Address;
   rateProvider: Address;
@@ -102,7 +102,7 @@ export type RateProviderOracle = {
 export type PendleOracle = {
   address: Address;
   chainId: number;
-  name: "PendleOracle";
+  name: 'PendleOracle';
   base: Address;
   quote: Address;
   pendleMarket: Address;
@@ -112,7 +112,7 @@ export type PendleOracle = {
 export type SwaapSafeguardOracle = {
   address: Address;
   chainId: number;
-  name: "SwaapSafeguardOracle";
+  name: 'SwaapSafeguardOracle';
   safeguardPool: Address;
   quote: Address;
   poolId: Hex;
@@ -121,7 +121,7 @@ export type SwaapSafeguardOracle = {
 export type UniswapV3Oracle = {
   address: Address;
   chainId: number;
-  name: "UniswapV3Oracle";
+  name: 'UniswapV3Oracle';
   tokenA: Address;
   tokenB: Address;
   pool: Address;
@@ -132,7 +132,7 @@ export type UniswapV3Oracle = {
 export type IdleTranchesOracle = {
   address: Address;
   chainId: number;
-  name: "IdleTranchesOracle";
+  name: 'IdleTranchesOracle';
   cdo: Address;
   tranche: Address;
   underlying: Address;

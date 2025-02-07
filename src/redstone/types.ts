@@ -1,4 +1,4 @@
-import { Address, Hex } from "viem";
+import { Address, Hex } from 'viem';
 
 type Chain = {
   name: string;
@@ -25,7 +25,7 @@ export type RedStoneRelayerManifest = RedStoneRelayerBase & {
 };
 
 export type RedStoneRelayerMultiFeedManifest = RedStoneRelayerBase & {
-  adapterContractType: "multi-feed";
+  adapterContractType: 'multi-feed';
   priceFeeds: {
     [key: string]: {
       priceFeedAddress: Address;

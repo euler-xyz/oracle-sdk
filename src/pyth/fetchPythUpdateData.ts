@@ -1,6 +1,6 @@
-import { Hex } from "viem";
+import { Hex } from 'viem';
 
-import { DEFAULT_HERMES_URL } from "./constants";
+import { DEFAULT_HERMES_URL } from './constants';
 
 export async function fetchPythUpdateData(
   feedIds: string[],
@@ -8,7 +8,7 @@ export async function fetchPythUpdateData(
 ): Promise<Hex> {
   try {
     const feedIdsWithoutPrefix = feedIds.map((feedId) => feedId.substring(2));
-    const idsParams = feedIdsWithoutPrefix.map((feedId) => `ids[]=${feedId}`).join("&");
+    const idsParams = feedIdsWithoutPrefix.map((feedId) => `ids[]=${feedId}`).join('&');
     const url = `${hermesUrl}/v2/updates/price/latest?${idsParams}&encoding=hex&parsed=true`;
 
     const response = await fetch(url);
@@ -18,13 +18,13 @@ export async function fetchPythUpdateData(
     const data = await response.json();
 
     if (!data.binary?.data) {
-      throw new Error("Invalid response format: missing binary data");
+      throw new Error('Invalid response format: missing binary data');
     }
 
     return `0x${data.binary.data}` as Hex;
   } catch (error) {
     throw new Error(
-      `Failed to fetch Pyth update data for feeds [${feedIds.join(", ")}]. Error: ${error}`,
+      `Failed to fetch Pyth update data for feeds [${feedIds.join(', ')}]. Error: ${error}`,
     );
   }
 }

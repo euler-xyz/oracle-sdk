@@ -1,2 +1,2 @@
-export * from "./indexChronicleFeeds";
-export * from "./types";
+export * from './indexChronicleFeeds';
+export * from './types';

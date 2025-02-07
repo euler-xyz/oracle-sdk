@@ -1,13 +1,14 @@
-import { Address, parseAbi, PublicClient } from "viem";
+import { Address, parseAbi, PublicClient } from 'viem';
 
-import { IdleTranche } from "./types";
-import { indexByAbi } from "../utils/indexByAbi";
+import { indexByAbi } from '../utils/indexByAbi';
+
+import { IdleTranche } from './types';
 
 const abiFunctions = parseAbi([
-  "function name() view returns (string)",
-  "function symbol() view returns (string)",
-  "function decimals() view returns (uint8)",
-  "function minter() view returns (address)",
+  'function name() view returns (string)',
+  'function symbol() view returns (string)',
+  'function decimals() view returns (uint8)',
+  'function minter() view returns (address)',
 ]);
 
 type Params = {

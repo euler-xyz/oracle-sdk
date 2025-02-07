@@ -1,13 +1,14 @@
-import { Address, parseAbi, PublicClient } from "viem";
+import { Address, parseAbi, PublicClient } from 'viem';
 
-import { IdleCDO } from "./types";
-import { indexByAbi } from "../utils/indexByAbi";
+import { indexByAbi } from '../utils/indexByAbi';
+
+import { IdleCDO } from './types';
 
 const abiFunctions = parseAbi([
-  "function owner() view returns (address)",
-  "function guardian() view returns (address)",
-  "function token() view returns (address)",
-  "function paused() view returns (bool)",
+  'function owner() view returns (address)',
+  'function guardian() view returns (address)',
+  'function token() view returns (address)',
+  'function paused() view returns (bool)',
 ]);
 
 type Params = {

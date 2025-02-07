@@ -1,4 +1,4 @@
-import { ChainlinkMetadata } from "./types";
+import { ChainlinkMetadata } from './types';
 
 export async function fetchChainlinkMetadataByRddUrl(rddUrl: string): Promise<ChainlinkMetadata> {
   try {

@@ -1,15 +1,16 @@
-import { Address, parseAbi, PublicClient } from "viem";
+import { Address, parseAbi, PublicClient } from 'viem';
 
-import { ChainlinkFeed } from "./types";
-import { indexByAbi } from "../utils/indexByAbi";
+import { indexByAbi } from '../utils/indexByAbi';
+
+import { ChainlinkFeed } from './types';
 
 const abiFunctions = parseAbi([
-  "function accessController() view returns (address)",
-  "function aggregator() view returns (address)",
-  "function decimals() view returns (uint8)",
-  "function description() view returns (string)",
-  "function owner() view returns (address)",
-  "function version() view returns (uint256)",
+  'function accessController() view returns (address)',
+  'function aggregator() view returns (address)',
+  'function decimals() view returns (uint8)',
+  'function description() view returns (string)',
+  'function owner() view returns (address)',
+  'function version() view returns (uint256)',
 ]);
 
 type Params = {

@@ -1,7 +1,8 @@
-import { Address, erc20Abi, PublicClient } from "viem";
+import { Address, erc20Abi, PublicClient } from 'viem';
 
-import { Asset } from "./types";
-import { getChainId } from "../utils/getChainId";
+import { getChainId } from '../utils/getChainId';
+
+import { Asset } from './types';
 
 type Params = {
   publicClient: PublicClient;
@@ -17,7 +18,7 @@ export async function indexAssets({
   const chainId = getChainId(publicClient);
   const results = await publicClient.multicall({
     contracts: addresses.flatMap((address) =>
-      (["name", "symbol", "decimals"] as const).map((functionName) => ({
+      (['name', 'symbol', 'decimals'] as const).map((functionName) => ({
         address,
         abi: erc20Abi,
         functionName,

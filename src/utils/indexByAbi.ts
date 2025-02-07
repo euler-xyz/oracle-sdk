@@ -1,6 +1,6 @@
-import { AbiFunction, Address, PublicClient } from "viem";
+import { AbiFunction, Address, PublicClient } from 'viem';
 
-import { getChainId } from "../utils/getChainId";
+import { getChainId } from '../utils/getChainId';
 
 type Params<T> = {
   publicClient: PublicClient;

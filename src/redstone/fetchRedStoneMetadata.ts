@@ -1,11 +1,11 @@
-import { isAddress } from "viem";
+import { isAddress } from 'viem';
 
-import { chainIdToRedStoneRelayerManifestSlugs, REDSTONE_MANIFESTS_BASE_URL } from "./constants";
+import { chainIdToRedStoneRelayerManifestSlugs, REDSTONE_MANIFESTS_BASE_URL } from './constants';
 import {
   RedStoneMetadata,
   RedStoneRelayerManifest,
   RedStoneRelayerMultiFeedManifest,
-} from "./types";
+} from './types';
 
 export async function fetchRedStoneMetadata(chainId: number): Promise<RedStoneMetadata> {
   if (!chainIdToRedStoneRelayerManifestSlugs[chainId]) {

@@ -1,16 +1,17 @@
-import { Address, Hex, parseAbi, PublicClient } from "viem";
+import { Address, Hex, parseAbi, PublicClient } from 'viem';
 
-import { RedStoneFeed } from "./types";
-import { indexByAbi } from "../utils/indexByAbi";
+import { indexByAbi } from '../utils/indexByAbi';
+
+import { RedStoneFeed } from './types';
 
 const abiFunctions = parseAbi([
-  "function accessController() view returns (address)",
-  "function aggregator() view returns (address)",
-  "function decimals() view returns (uint8)",
-  "function description() view returns (string)",
-  "function version() view returns (uint256)",
-  "function getDataFeedId() view returns (bytes32)",
-  "function getPriceFeedAdapter() view returns (address)",
+  'function accessController() view returns (address)',
+  'function aggregator() view returns (address)',
+  'function decimals() view returns (uint8)',
+  'function description() view returns (string)',
+  'function version() view returns (uint256)',
+  'function getDataFeedId() view returns (bytes32)',
+  'function getPriceFeedAdapter() view returns (address)',
 ]);
 
 type Params = {

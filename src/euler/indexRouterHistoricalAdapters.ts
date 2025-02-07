@@ -1,4 +1,4 @@
-import { Address, getAddress, parseAbiItem, PublicClient } from "viem";
+import { Address, getAddress, parseAbiItem, PublicClient } from 'viem';
 
 type Params = {
   publicClient: PublicClient;
@@ -7,7 +7,7 @@ type Params = {
 };
 
 const event = parseAbiItem(
-  "event ConfigSet(address indexed asset0, address indexed asset1, address indexed oracle)",
+  'event ConfigSet(address indexed asset0, address indexed asset1, address indexed oracle)',
 );
 
 export async function indexRouterHistoricalAdapters({

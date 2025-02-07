@@ -1,20 +1,21 @@
-import { Address, Hex, parseAbi, PublicClient } from "viem";
+import { Address, Hex, parseAbi, PublicClient } from 'viem';
 
-import { SwaapSafeguardPool } from "./types";
-import { indexByAbi } from "../utils/indexByAbi";
+import { indexByAbi } from '../utils/indexByAbi';
+
+import { SwaapSafeguardPool } from './types';
 
 const abiFunctions = parseAbi([
-  "function name() view returns (string)",
-  "function symbol() view returns (string)",
-  "function decimals() view returns (uint8)",
-  "function getPoolId() view returns (bytes32)",
-  "function getOwner() view returns (address)",
-  "function signer() view returns (address)",
-  "function getAuthorizer() view returns (address)",
-  "function getProtocolFeesCollector() view returns (address)",
-  "function getPausedState() view returns (bool,uint256,uint256)",
-  "function isRecoveryMode() view returns (bool)",
-  "function isAllowlistEnabled() view returns (bool)",
+  'function name() view returns (string)',
+  'function symbol() view returns (string)',
+  'function decimals() view returns (uint8)',
+  'function getPoolId() view returns (bytes32)',
+  'function getOwner() view returns (address)',
+  'function signer() view returns (address)',
+  'function getAuthorizer() view returns (address)',
+  'function getProtocolFeesCollector() view returns (address)',
+  'function getPausedState() view returns (bool,uint256,uint256)',
+  'function isRecoveryMode() view returns (bool)',
+  'function isAllowlistEnabled() view returns (bool)',
 ]);
 
 type Params = {
