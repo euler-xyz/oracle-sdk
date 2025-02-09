@@ -7,6 +7,7 @@ import {
   aurora,
   avalanche,
   base,
+  berachain,
   bitTorrent,
   blast,
   boba,
@@ -24,6 +25,7 @@ import {
   fantom,
   filecoin,
   flowMainnet,
+  fraxtal,
   gnosis,
   gravity,
   hedera,
@@ -41,6 +43,7 @@ import {
   mantle,
   merlin,
   meter,
+  metis,
   mode,
   morph,
   neonMainnet,
@@ -81,6 +84,7 @@ export const chainIdToPythProxy: Record<number, Address> = {
   [apeChain.id]: '0x2880aB155794e7179c9eE2e38200202908C17B43', // Apechain
   [astarZkEVM.id]: '0xA2aa501b19aff244D90cc15a4Cf739D2725B5729', // Astar zkEVM
   [aurora.id]: '0xF89C7b475821EC3fDC2dC8099032c05c6c0c9AB9', // Aurora
+  [berachain.id]: '0x2880aB155794e7179c9eE2e38200202908C17B43', // Berachain
   [blast.id]: '0xA2aa501b19aff244D90cc15a4Cf739D2725B5729', // Blast
   [bitTorrent.id]: '0xA2aa501b19aff244D90cc15a4Cf739D2725B5729', // BTTC
   [boba.id]: '0x4374e5a8b9C22271E9EB878A2AA31DE97DF15DAF', // Boba
@@ -125,4 +129,6 @@ export const chainIdToPythProxy: Record<number, Address> = {
   [zkFair.id]: '0xA2aa501b19aff244D90cc15a4Cf739D2725B5729', // ZKFair
   [zetachain.id]: '0x2880aB155794e7179c9eE2e38200202908C17B43', // zetachain
   [ronin.id]: '0x2880aB155794e7179c9eE2e38200202908C17B43',
+  [metis.id]: '0xA2aa501b19aff244D90cc15a4Cf739D2725B5729',
+  [fraxtal.id]: '0x2880aB155794e7179c9eE2e38200202908C17B43',
 };
