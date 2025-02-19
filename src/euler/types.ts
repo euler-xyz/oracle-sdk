@@ -161,3 +161,8 @@ export type Asset = {
   symbol: string;
   decimals: number;
 };
+
+export type RegistryEntry = {
+  addedAt: bigint;
+  revokedAt: bigint;
+};

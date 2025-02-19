@@ -1,6 +1,6 @@
 {
   "name": "@objectivelabs/oracle-sdk",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "JavaScript utilities for Euler price oracles",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -12,6 +12,7 @@
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "clean": "rimraf dist",
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "test": "tsup src/test.ts --format cjs,esm && node dist/test.js",
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
