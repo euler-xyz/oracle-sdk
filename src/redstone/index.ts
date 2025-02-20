@@ -1,3 +1,4 @@
+export * from './chainIdToRedStoneRelayerManifestSlugs';
 export * from './constants';
 export * from './fetchRedStoneMetadata';
 export * from './indexRedStoneFeeds';

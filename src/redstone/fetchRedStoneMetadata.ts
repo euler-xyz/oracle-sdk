@@ -1,6 +1,7 @@
 import { isAddress } from 'viem';
 
-import { chainIdToRedStoneRelayerManifestSlugs, REDSTONE_MANIFESTS_BASE_URL } from './constants';
+import { chainIdToRedStoneRelayerManifestSlugs } from './chainIdToRedStoneRelayerManifestSlugs';
+import { REDSTONE_MANIFESTS_BASE_URL } from './constants';
 import {
   RedStoneMetadata,
   RedStoneRelayerManifest,
