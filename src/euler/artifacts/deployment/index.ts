@@ -3,6 +3,7 @@ import ChainlinkOracle from './ChainlinkOracle';
 import ChronicleOracle from './ChronicleOracle';
 import CrossAdapter from './CrossAdapter';
 import FixedRateOracle from './FixedRateOracle';
+import IdleTranchesOracle from './IdleTranchesOracle';
 import LidoFundamentalOracle from './LidoFundamentalOracle';
 import LidoOracle from './LidoOracle';
 import PendleOracle from './PendleOracle';
@@ -17,6 +18,7 @@ export const deploymentArtifacts = {
   ChronicleOracle,
   CrossAdapter,
   FixedRateOracle,
+  IdleTranchesOracle,
   LidoFundamentalOracle,
   LidoOracle,
   PendleOracle,

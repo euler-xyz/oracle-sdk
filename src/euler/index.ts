@@ -1,5 +1,7 @@
 export * from './artifacts';
 export * from './fetchDeployedRouters';
+export * from './getConstructorArgs';
+export * from './getDeploymentArgs';
 export * from './getEffectiveBaseAndQuote';
 export * from './indexAdapters';
 export * from './indexAssets';
