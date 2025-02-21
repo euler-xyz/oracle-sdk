@@ -1,5 +1,6 @@
 export * from './artifacts';
 export * from './fetchDeployedRouters';
+export * from './getAssetAddresses';
 export * from './getConstructorArgs';
 export * from './getDeploymentArgs';
 export * from './getEffectiveBaseAndQuote';
