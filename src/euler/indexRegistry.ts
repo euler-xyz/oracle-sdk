@@ -1,11 +1,12 @@
-import { Address, parseAbiItem, PublicClient } from 'viem';
+import { Address, BlockNumber, BlockTag, parseAbiItem, PublicClient } from 'viem';
 
 import { RegistryEntry } from './types';
 
 type Params = {
   publicClient: PublicClient;
   snapshotRegistry: Address;
-  fromBlock: bigint;
+  fromBlock: BlockNumber | BlockTag | undefined;
+  toBlock: BlockNumber | BlockTag | undefined;
 };
 
 const addedEvent = parseAbiItem(
@@ -18,17 +19,20 @@ export async function indexRegistry({
   publicClient,
   snapshotRegistry,
   fromBlock,
+  toBlock,
 }: Params): Promise<Record<Address, RegistryEntry>> {
   const entries: Record<Address, RegistryEntry> = {};
   const addedEvents = await publicClient.getLogs({
     address: snapshotRegistry,
     event: addedEvent,
     fromBlock,
+    toBlock,
   });
   const revokedEvents = await publicClient.getLogs({
     address: snapshotRegistry,
     event: revokedEvent,
     fromBlock,
+    toBlock,
   });
 
   const sortedEvents = [...addedEvents, ...revokedEvents].sort((a, b) => {

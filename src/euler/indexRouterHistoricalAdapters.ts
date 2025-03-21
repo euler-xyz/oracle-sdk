@@ -1,9 +1,10 @@
-import { Address, getAddress, parseAbiItem, PublicClient } from 'viem';
+import { Address, BlockNumber, BlockTag, getAddress, parseAbiItem, PublicClient } from 'viem';
 
 type Params = {
   publicClient: PublicClient;
   routerAddresses: Address[];
-  fromBlock: bigint;
+  fromBlock: BlockNumber | BlockTag | undefined;
+  toBlock: BlockNumber | BlockTag | undefined;
 };
 
 const event = parseAbiItem(
@@ -14,12 +15,14 @@ export async function indexRouterHistoricalAdapters({
   publicClient,
   routerAddresses,
   fromBlock,
+  toBlock,
 }: Params): Promise<Address[]> {
   const adapterAddresses = new Set<Address>();
   const events = await publicClient.getLogs({
     address: routerAddresses,
     event,
     fromBlock,
+    toBlock,
   });
 
   events.forEach((e) => {
