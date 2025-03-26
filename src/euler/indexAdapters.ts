@@ -33,6 +33,8 @@ const abi = parseAbi([
   'function cdo() view returns (address)',
   'function tranche() view returns (address)',
   'function underlying() view returns (address)',
+  'function pool() view returns (address)',
+  'function priceOracleIndex() view returns (uint256)',
 ]);
 
 const adapterClassToFunctionNames: Record<string, string[]> = {
@@ -44,10 +46,12 @@ const adapterClassToFunctionNames: Record<string, string[]> = {
   LidoOracle: ['WSTETH', 'STETH'],
   LidoFundamentalOracle: ['WSTETH', 'STETH', 'WETH'],
   PendleOracle: ['base', 'quote', 'pendleMarket', 'twapWindow'],
+  PendleUniversalOracle: ['base', 'quote', 'pendleMarket', 'twapWindow'],
   PythOracle: ['base', 'quote', 'pyth', 'feedId', 'maxStaleness', 'maxConfWidth'],
   RateProviderOracle: ['base', 'quote', 'rateProvider'],
   RedstoneCoreOracle: ['base', 'quote', 'feedId', 'feedDecimals', 'maxStaleness'],
   UniswapV3Oracle: ['tokenA', 'tokenB', 'fee', 'twapWindow', 'pool'],
+  CurveEMAOracle: ['base', 'quote', 'pool', 'priceOracleIndex'],
   CrossAdapter: ['base', 'cross', 'quote', 'oracleBaseCross', 'oracleCrossQuote'],
 };
 

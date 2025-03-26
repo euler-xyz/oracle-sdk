@@ -30,6 +30,16 @@ export type ChronicleOracle = {
   maxStaleness: bigint;
 };
 
+export type CurveEMAOracle = {
+  address: Address;
+  chainId: number;
+  name: 'CurveEMAOracle';
+  base: Address;
+  quote: Address;
+  pool: Address;
+  priceOracleIndex: bigint;
+};
+
 export type LidoOracle = {
   address: Address;
   chainId: number;
@@ -109,6 +119,16 @@ export type PendleOracle = {
   twapWindow: number;
 };
 
+export type PendleUniversalOracle = {
+  address: Address;
+  chainId: number;
+  name: 'PendleUniversalOracle';
+  base: Address;
+  quote: Address;
+  pendleMarket: Address;
+  twapWindow: number;
+};
+
 export type SwaapSafeguardOracle = {
   address: Address;
   chainId: number;
@@ -142,6 +162,7 @@ export type Adapter =
   | ChainlinkOracle
   | ChainlinkInfrequentOracle
   | ChronicleOracle
+  | CurveEMAOracle
   | LidoOracle
   | LidoFundamentalOracle
   | PythOracle
@@ -150,6 +171,7 @@ export type Adapter =
   | FixedRateOracle
   | RateProviderOracle
   | PendleOracle
+  | PendleUniversalOracle
   | SwaapSafeguardOracle
   | IdleTranchesOracle
   | UniswapV3Oracle;
