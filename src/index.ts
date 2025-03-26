@@ -1,5 +1,6 @@
 export * from './chainlink';
 export * from './chronicle';
+export * from './eoracle';
 export * from './euler';
 export * from './idle';
 export * from './mev';
