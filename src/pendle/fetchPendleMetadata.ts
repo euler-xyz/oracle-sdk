@@ -27,8 +27,6 @@ export async function fetchPendleMetadata(chainId: number): Promise<PendleMetada
     throw new Error('No data returned from Pendle API');
   }
 
-  console.log(data.markets[0]);
-
   return data.markets.map((market) => ({
     chainId,
     pt: splitAddress(market.pt),
