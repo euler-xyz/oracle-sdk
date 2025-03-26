@@ -26,7 +26,7 @@ export async function indexEOracleFeeds({
     abiFunctions,
     transformers: {
       getFeedId: (value) => ({
-        feedId: value as number,
+        feedId: Number(value),
       }),
     },
   });

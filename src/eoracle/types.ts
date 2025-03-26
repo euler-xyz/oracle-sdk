@@ -14,4 +14,4 @@ export type EOracleFeed = {
   description: string;
   feedId: number;
   version: bigint;
-}[];
+};
