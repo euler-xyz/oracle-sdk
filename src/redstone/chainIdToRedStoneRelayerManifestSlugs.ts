@@ -10,6 +10,7 @@ import {
   optimism,
   sonic,
   swellchain,
+  unichain,
 } from 'viem/chains';
 
 type RedStoneRelayerManifestSlugs = {
@@ -79,5 +80,9 @@ export const chainIdToRedStoneRelayerManifestSlugs: Record<number, RedStoneRelay
   [base.id]: {
     multi: 'baseMultiFeed',
     standalone: ['baseBsdetheth', 'baseEusd', 'basePufetheth'],
+  },
+  [unichain.id]: {
+    multi: 'unichainMultiFeed',
+    standalone: [],
   },
 };
