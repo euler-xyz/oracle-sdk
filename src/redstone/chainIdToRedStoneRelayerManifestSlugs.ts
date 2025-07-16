@@ -1,5 +1,6 @@
 import {
   arbitrum,
+  avalanche,
   base,
   berachain,
   bob,
@@ -10,6 +11,7 @@ import {
   optimism,
   sonic,
   swellchain,
+  tac,
   unichain,
 } from 'viem/chains';
 
@@ -61,7 +63,10 @@ export const chainIdToRedStoneRelayerManifestSlugs: Record<number, RedStoneRelay
       'arbitrumWeethfundamental',
     ],
   },
-  // [avalanche.id]: {}
+  [avalanche.id]: {
+    multi: 'avalancheMultiFeed',
+    standalone: [],
+  },
   [bsc.id]: {
     multi: 'bnbMultiFeed',
     standalone: ['bnbBnb', 'bnbBtc', 'bnbEzetheth', 'bnbStone'],
@@ -83,6 +88,10 @@ export const chainIdToRedStoneRelayerManifestSlugs: Record<number, RedStoneRelay
   },
   [unichain.id]: {
     multi: 'unichainMultiFeed',
+    standalone: [],
+  },
+  [tac.id]: {
+    multi: 'tacMultiFeed',
     standalone: [],
   },
 };

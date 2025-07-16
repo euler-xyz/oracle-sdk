@@ -30,8 +30,15 @@ export async function fetchRedStoneMetadata(chainId: number): Promise<RedStoneMe
   );
 
   const standaloneResponses: RedStoneRelayerManifest[] = await Promise.all(
-    standaloneUrls.map((url) => fetch(url).then((response) => response.json())),
-  );
+    standaloneUrls.map((url) =>
+      fetch(url)
+        .then((response) => response.json())
+        .catch(() => {
+          console.error(`Error fetching RedStone metadata for ${url}.`);
+          return [];
+        }),
+    ),
+  ).then((responses) => responses.flat());
 
   const priceFeeds: RedStoneMetadata = [];
 
