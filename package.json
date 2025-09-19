@@ -11,6 +11,7 @@
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "clean": "rimraf dist",
+    "prepare": "npm run build",
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
     "test": "tsup src/test.ts --format cjs,esm && node dist/test.js",
     "prepublishOnly": "npm run build",
