@@ -8,13 +8,18 @@ type PartialEOracleJsonConfig = {
 };
 
 export async function fetchEOracleMetadata(chainId: number): Promise<EOracleMetadata> {
-  const url = `${EORACLE_CONFIGS_BASE_URL}/${chainId}/42420/targetContractAddresses.json`;
+  // Avoid double slashes: EORACLE_CONFIGS_BASE_URL already ends with '/'
+  const url = `${EORACLE_CONFIGS_BASE_URL}${chainId}/42420/targetContractAddresses.json`;
 
-  const metadata = (await fetch(url).then((response) =>
-    response.json(),
-  )) as PartialEOracleJsonConfig;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch eOracle metadata from ${url}: ${response.status} ${response.statusText}`);
+  }
 
-  return Object.entries(metadata.feeds).map(([symbol, address]) => ({
+  const metadata = (await response.json()) as PartialEOracleJsonConfig;
+  const feeds = metadata?.feeds ?? {};
+
+  return Object.entries(feeds).map(([symbol, address]) => ({
     symbol,
     feedAddress: address,
     deviationPercentage: 0.5,
