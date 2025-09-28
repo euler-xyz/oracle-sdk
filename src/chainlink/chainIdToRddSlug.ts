@@ -21,6 +21,7 @@ import {
   sonic,
   xLayer,
   zksync,
+  plasma,
 } from 'viem/chains';
 
 export const RDD_URL = 'https://reference-data-directory.vercel.app';
@@ -48,4 +49,5 @@ export const chainIdToRddSlug: Record<number, string> = {
   [mantle.id]: 'feeds-ethereum-mainnet-mantle-1',
   [xLayer.id]: 'feeds-ethereum-mainnet-xlayer-1',
   [ronin.id]: 'feeds-ronin-mainnet',
+  [plasma.id]: 'feeds-plasma-mainnet',
 };
