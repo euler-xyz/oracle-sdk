@@ -14,6 +14,7 @@ import {
   tac,
   unichain,
 } from 'viem/chains';
+import { monad } from '../utils/customChains';
 
 type RedStoneRelayerManifestSlugs = {
   multi?: string;
@@ -92,6 +93,10 @@ export const chainIdToRedStoneRelayerManifestSlugs: Record<number, RedStoneRelay
   },
   [tac.id]: {
     multi: 'tacMultiFeed',
+    standalone: [],
+  },
+  [monad.id]: {
+    multi: 'monadMultiFeed',
     standalone: [],
   },
 };
