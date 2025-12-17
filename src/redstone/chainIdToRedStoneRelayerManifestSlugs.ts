@@ -13,8 +13,9 @@ import {
   swellchain,
   tac,
   unichain,
+  hyperEvm,
+  monad,
 } from 'viem/chains';
-import { monad } from '../utils/customChains';
 
 type RedStoneRelayerManifestSlugs = {
   multi?: string;
@@ -97,6 +98,10 @@ export const chainIdToRedStoneRelayerManifestSlugs: Record<number, RedStoneRelay
   },
   [monad.id]: {
     multi: 'monadMultiFeed',
+    standalone: [],
+  },
+  [hyperEvm.id]: {
+    multi: 'hyperevmMultiFeed',
     standalone: [],
   },
 };

@@ -64,6 +64,7 @@ import {
   wemix,
   zetachain,
   zkFair,
+  hyperEvm,
 } from 'viem/chains';
 import { zksync } from 'viem/zksync';
 
@@ -133,5 +134,6 @@ export const chainIdToPythProxy: Record<number, Address> = {
   [metis.id]: '0xA2aa501b19aff244D90cc15a4Cf739D2725B5729',
   [fraxtal.id]: '0x2880aB155794e7179c9eE2e38200202908C17B43',
   [unichain.id]: '0x2880aB155794e7179c9eE2e38200202908C17B43',
-  999: '0xe9d69CdD6Fe41e7B621B4A688C5D1a68cB5c8ADc',
+  [hyperEvm.id]: '0xe9d69CdD6Fe41e7B621B4A688C5D1a68cB5c8ADc', // HyperEvm
 };
+// https://docs.pyth.network/price-feeds/core/contract-addresses/evm

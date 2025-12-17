@@ -52,6 +52,6 @@
     "eslint-import-resolver-typescript": "^3.6.1"
   },
   "dependencies": {
-    "viem": "^2.37.9"
+    "viem": "^2.40.0"
   }
 }

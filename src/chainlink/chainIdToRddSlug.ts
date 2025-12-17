@@ -22,8 +22,9 @@ import {
   xLayer,
   zksync,
   plasma,
+  hyperEvm,
+  monad,
 } from 'viem/chains';
-import { monad } from '../utils/customChains';
 
 export const RDD_URL = 'https://reference-data-directory.vercel.app';
 
@@ -52,4 +53,5 @@ export const chainIdToRddSlug: Record<number, string> = {
   [ronin.id]: 'feeds-ronin-mainnet',
   [plasma.id]: 'feeds-plasma-mainnet',
   [monad.id]: 'feeds-monad-mainnet',
+  [hyperEvm.id]: 'feeds-hyperliquid-mainnet',
 };
