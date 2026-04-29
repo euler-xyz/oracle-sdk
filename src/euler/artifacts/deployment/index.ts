@@ -1,4 +1,5 @@
 import ChainlinkInfrequentOracle from './ChainlinkInfrequentOracle';
+import ChainlinkInfrequentXStocksOracle from './ChainlinkInfrequentXStocksOracle';
 import ChainlinkOracle from './ChainlinkOracle';
 import ChronicleOracle from './ChronicleOracle';
 import CrossAdapter from './CrossAdapter';
@@ -17,6 +18,7 @@ import UniswapV3Oracle from './UniswapV3Oracle';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const deploymentArtifacts: Record<string, any> = {
   ChainlinkInfrequentOracle,
+  ChainlinkInfrequentXStocksOracle,
   ChainlinkOracle,
   ChronicleOracle,
   CrossAdapter,

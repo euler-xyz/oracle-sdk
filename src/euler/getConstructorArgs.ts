@@ -15,6 +15,19 @@ export function getConstructorArgs(adapter: Adapter): readonly unknown[] {
     return [adapter.base, adapter.quote, adapter.feed, adapter.maxStaleness];
   }
 
+  if (adapter.name === 'ChainlinkInfrequentXStocksOracle') {
+    return [
+      adapter.pauseTimeBefore,
+      adapter.pauseTimeAfter,
+      adapter.maxAllowedMultiplierChange,
+      adapter.xStocksToken,
+      adapter.base,
+      adapter.quote,
+      adapter.feed,
+      adapter.maxStaleness,
+    ];
+  }
+
   if (adapter.name === 'PythOracle') {
     return [
       adapter.pyth,
