@@ -1,3 +1,4 @@
+export * from './utils/diagnostics';
 export * from './chainlink';
 export * from './chronicle';
 export * from './eoracle';
