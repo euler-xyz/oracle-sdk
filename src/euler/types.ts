@@ -20,6 +20,16 @@ export type ChainlinkInfrequentOracle = {
   maxStaleness: bigint;
 };
 
+export type ChainlinkInfrequentNanosecondOracle = {
+  address: Address;
+  chainId: number;
+  name: 'ChainlinkInfrequentNanosecondOracle';
+  base: Address;
+  quote: Address;
+  feed: Address;
+  maxStaleness: bigint;
+};
+
 export type ChainlinkInfrequentXStocksOracle = {
   address: Address;
   chainId: number;
@@ -175,6 +185,7 @@ export type IdleTranchesOracle = {
 export type Adapter =
   | ChainlinkOracle
   | ChainlinkInfrequentOracle
+  | ChainlinkInfrequentNanosecondOracle
   | ChainlinkInfrequentXStocksOracle
   | ChronicleOracle
   | CurveEMAOracle

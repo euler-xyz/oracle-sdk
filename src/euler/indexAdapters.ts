@@ -44,6 +44,7 @@ const abi = parseAbi([
 const adapterClassToFunctionNames: Record<string, string[]> = {
   ChainlinkOracle: ['base', 'quote', 'feed', 'maxStaleness'],
   ChainlinkInfrequentOracle: ['base', 'quote', 'feed', 'maxStaleness'],
+  ChainlinkInfrequentNanosecondOracle: ['base', 'quote', 'feed', 'maxStaleness'],
   ChainlinkInfrequentXStocksOracle: [
     'pauseTimeBefore',
     'pauseTimeAfter',
